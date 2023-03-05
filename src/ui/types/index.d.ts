@@ -1,0 +1,1 @@
+declare type Spread<L, R> = R & Pick<L, Exclude<keyof L, keyof R>>;
