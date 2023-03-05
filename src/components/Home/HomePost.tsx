@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { Avatar } from "react-native-paper";
+import { Feather } from '@expo/vector-icons';
 
 interface Props {
   master: string;
@@ -40,6 +41,81 @@ const HomePost: React.FC<Props> = ({ photo, master, avatar }) => {
             uri: photo,
           }}
         />
+      </View>
+      <View
+        style={{
+          padding:8,
+          flexDirection: "row",
+          alignItems: "center"
+        }}
+      >
+        <Feather name="heart" size={24} color="black" />
+        <Text
+          style={{
+            marginLeft:5
+          }}
+        >1,202 Понравилось
+        </Text>
+        <View 
+          style={{
+            padding:3,
+            paddingLeft:5,
+            paddingRight:5,
+            borderRadius:20,
+            flexDirection: "row",
+            marginLeft:1,
+            height:35,
+          }}
+        >
+          <Image
+                  style={{
+                    position:'absolute',
+                    top:1,
+                    left:5,
+                    zIndex:3,
+                    borderWidth: 2,
+                    borderColor: 'white',
+                    width: 32,
+                    height: 32,
+                    borderRadius: 20
+                  }}
+          source={{
+            uri: avatar,
+          }}
+        />
+        <Image
+                  style={{
+                    position:'absolute',
+                    top:1,
+                    left:23,
+                    zIndex:2,
+                    borderWidth: 2,
+                    borderColor: 'white',
+                    width: 32,
+                    height: 32,
+                    borderRadius: 20
+                  }}
+          source={{
+            uri: avatar,
+          }}
+        />
+        <Image
+                  style={{
+                    position:'absolute',
+                    top:1,
+                    left:41,
+                    zIndex:1,
+                    borderWidth: 2,
+                    borderColor: 'white',
+                    width: 32,
+                    height: 32,
+                    borderRadius: 20
+                  }}
+          source={{
+            uri: avatar,
+          }}
+        />
+        </View>
       </View>
     </View>
   );
