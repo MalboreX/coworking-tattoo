@@ -6,7 +6,7 @@ const HomeScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <HomeHeader />
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.feedContainer}>
           <HomeFeed />
         </View>
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   feedContainer: {
     flexDirection: "row",
     marginVertical: 5,
-    marginHorizontal: 20,
+    marginHorizontal: 10,
   },
 });
 

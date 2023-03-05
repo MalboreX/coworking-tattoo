@@ -67,15 +67,14 @@ const HomeRoutes: React.FC = () => {
         },
         tabBarActiveTintColor: "black",
         tabBarInactiveTintColor: "gray",
-        tabBarStyle: {
-          height: 55,
-        },
-        tabBarItemStyle: {
-          paddingVertical: 5,
-        },
         tabBarBadgeStyle: {
-          maxWidth: 10,
-          maxHeight: 10,
+          maxWidth: 'auto',
+          maxHeight: 14,
+          borderRadius:7,
+          fontSize:10,
+          fontWeight:500,
+          lineHeight:14,
+          textAlign:'center',
         },
       })}
     >
@@ -105,7 +104,7 @@ const HomeRoutes: React.FC = () => {
         component={MessageScreen}
         options={{
           headerShown: false,
-          tabBarBadge: 2,
+          tabBarBadge: 1000,
         }}
       />
       <Tab.Screen
