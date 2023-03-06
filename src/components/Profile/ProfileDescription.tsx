@@ -18,9 +18,7 @@ const ProfileDescription: React.FC<Props> = ({ name, alias, description }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    
-  },
+  container: {},
   text: {
     fontFamily: "Roboto_400Regular",
     fontSize: 16,
@@ -32,7 +30,7 @@ const styles = StyleSheet.create({
   description: {
     marginVertical: 10,
     fontSize: 14,
-  }
+  },
 });
 
 export default ProfileDescription;

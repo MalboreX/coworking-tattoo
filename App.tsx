@@ -68,13 +68,13 @@ const HomeRoutes: React.FC = () => {
         tabBarActiveTintColor: "black",
         tabBarInactiveTintColor: "gray",
         tabBarBadgeStyle: {
-          maxWidth: 'auto',
+          maxWidth: "auto",
           maxHeight: 14,
-          borderRadius:7,
-          fontSize:10,
-          fontWeight:500,
-          lineHeight:14,
-          textAlign:'center',
+          borderRadius: 7,
+          fontSize: 10,
+          fontWeight: 500,
+          lineHeight: 14,
+          textAlign: "center",
         },
       })}
     >

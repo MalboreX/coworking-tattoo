@@ -1,8 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { Avatar } from "react-native-paper";
-import { Feather } from '@expo/vector-icons';
-import PostLikerPhoto from "./PostLikerPhoto";
+import { Feather } from "@expo/vector-icons";
+import LikersAvatars from "./LikersAvatars";
 
 interface Props {
   master: string;
@@ -45,33 +45,24 @@ const HomePost: React.FC<Props> = ({ photo, master, avatar }) => {
       </View>
       <View
         style={{
-          padding:8,
+          padding: 8,
           flexDirection: "row",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <Feather name="heart" size={24} color="black" />
         <Text
           style={{
-            marginLeft:5
-          }}
-        >1,202 Понравилось
-        </Text>
-        <View 
-          style={{
-            padding:3,
-            paddingLeft:5,
-            paddingRight:5,
-            borderRadius:20,
-            flexDirection: "row",
-            marginLeft:1,
-            height:35,
+            marginLeft: 5,
           }}
         >
-          <PostLikerPhoto avatar={avatar} zIndex={3} index={0} />
+          1,202 Понравилось
+        </Text>
+        <LikersAvatars avatars={[avatar, avatar, avatar]}>
+          {/*<PostLikerPhoto avatar={avatar} zIndex={3} index={0} />
           <PostLikerPhoto avatar={avatar} zIndex={2} index={1} />
-          <PostLikerPhoto avatar={avatar} zIndex={1} index={2} />
-        </View>
+        <PostLikerPhoto avatar={avatar} zIndex={1} index={2} />*/}
+        </LikersAvatars>
       </View>
     </View>
   );
