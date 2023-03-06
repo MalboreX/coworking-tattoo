@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
   alias: {
     color: "#9797BD",
     fontSize: 12,
+    justifyContent: "flex-end",
   },
   description: {
     marginVertical: 10,

@@ -5,10 +5,9 @@ import PostLikerPhoto from "./PostLikerPhoto";
 
 interface Props {
   avatars: string[];
-  children: React.ReactNode;
 }
 
-const LikersAvatars: React.FC<Props> = ({ children, avatars }) => {
+const LikersAvatars: React.FC<Props> = ({ avatars }) => {
   const countAvatars = avatars.length;
 
   return (
@@ -16,6 +15,7 @@ const LikersAvatars: React.FC<Props> = ({ children, avatars }) => {
       {avatars.map((ava, idx) => {
         return (
           <PostLikerPhoto
+            key={idx}
             avatar={ava}
             zIndex={countAvatars - idx}
             index={idx}
