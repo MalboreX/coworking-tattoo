@@ -17,99 +17,99 @@ const photos = [
 ];
 
 const ProfileScreen: React.FC = () => {
-
   const width = Dimensions.get("window").width;
 
   return (
     <>
-    <View style={styles.container}>
-      <ProfileHeader />
-      <View style={styles.profileContainer}>
-        <View style={{ flexDirection: "row" }}>
+      <View style={styles.container}>
+        <ProfileHeader />
+        <View style={styles.profileContainer}>
+          <View style={{ flexDirection: "row" }}>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                flex: 1,
+              }}
+            >
+              <Avatar.Image
+                size={80}
+                source={{
+                  uri: "https://i.pinimg.com/736x/47/fe/14/47fe1410a5581aa8a2143ed94d04cd1f.jpg",
+                }}
+              />
+              <View
+                style={{
+                  flex: 1,
+                  flexDirection: "row",
+                  justifyContent: "space-around",
+                }}
+              >
+                <ProfileMetric header="100" subheader="Posts" />
+                <ProfileMetric header="100" subheader="Followers" />
+                <ProfileMetric header="1000+" subheader="Likes" />
+              </View>
+            </View>
+          </View>
+
           <View
             style={{
-              flexDirection: "row",
-              alignItems: "center",
-              flex: 1,
+              paddingVertical: 15,
             }}
           >
-            <Avatar.Image
-              size={80}
-              source={{
-                uri: "https://i.pinimg.com/736x/47/fe/14/47fe1410a5581aa8a2143ed94d04cd1f.jpg",
-              }}
+            <ProfileDescription
+              name="FineLine Angel"
+              alias="@fineline_angel"
+              description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
             />
             <View
               style={{
-                flex: 1,
-                flexDirection: "row",
-                justifyContent: "space-around",
+                gap: 5,
               }}
             >
-              <ProfileMetric header="100" subheader="Posts" />
-              <ProfileMetric header="100" subheader="Followers" />
-              <ProfileMetric header="1000+" subheader="Likes" />
+              <ActionButton
+                height={50}
+                mode="contained"
+                onPress={() => console.log("Sub")}
+              >
+                <Text>Подписаться на @fineline_angel</Text>
+              </ActionButton>
+              <ActionButton
+                height={50}
+                mode="contained"
+                onPress={() => console.log("Req")}
+              >
+                <Text>Спросить и записаться</Text>
+              </ActionButton>
             </View>
           </View>
         </View>
-
         <View
           style={{
-            paddingVertical: 15,
+            borderWidth: 1,
+            borderColor: "rgba(0, 0, 0, 0.1)",
           }}
-        >
-          <ProfileDescription
-            name="FineLine Angel"
-            alias="@fineline_angel"
-            description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
-          />
-          <View
-            style={{
-              gap: 5,
-            }}
-          >
-            <ActionButton
-              height={50}
-              mode="contained"
-              onPress={() => console.log("Sub")}
-            >
-              <Text>Подписаться на @fineline_angel</Text>
-            </ActionButton>
-            <ActionButton
-              height={50}
-              mode="contained"
-              onPress={() => console.log("Req")}
-            >
-              <Text>Спросить и записаться</Text>
-            </ActionButton>
-          </View>
-        </View>
+        ></View>
       </View>
       <View
         style={{
-          borderWidth: 1,
-          borderColor: "rgba(0, 0, 0, 0.1)",
+          flex: 1,
+          backgroundColor: "#FFF",
+          paddingTop: 15,
         }}
-      ></View>
-    </View>
-    <View style={{
-      flex: 1,
-      backgroundColor: "#FFF",
-      paddingTop: 15
-    }}>
+      >
         <View
           style={{
             flexDirection: "row",
             flexWrap: "wrap",
             justifyContent: "center",
-            gap: 1
+            gap: 1,
           }}
         >
           {photos.map((link, idx) => (
             <Image
               key={idx}
-              style={{ width: (width * 0.3315), height: (width * 0.3315),
-              }}
+              style={{ width: width * 0.3315, height: width * 0.3315 }}
               source={{
                 uri: link,
               }}
@@ -124,13 +124,10 @@ const ProfileScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FFF",
-    
   },
   profileContainer: {
     marginTop: 20,
     marginHorizontal: 20,
-  },
-  photoContainer: {
   },
 });
 

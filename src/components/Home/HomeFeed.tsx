@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import HomePost from "./HomePost";
+import { HomePost } from "./Post";
 
 const HomeFeed: React.FC = () => {
   return (
