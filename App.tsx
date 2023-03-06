@@ -13,7 +13,7 @@ import {
   Roboto_900Black,
 } from "@expo-google-fonts/roboto";
 
-import { HomeScreen, LoginScreen, ProfileScreen } from "./src/screens";
+import { DialoguesScreen, HomeScreen, LoginScreen, ProfileScreen } from "./src/screens";
 
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -25,7 +25,7 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const MessageScreen: React.FC = () => {
-  return <></>;
+  return <DialoguesScreen />
 };
 
 const ManagerScreen: React.FC = () => {

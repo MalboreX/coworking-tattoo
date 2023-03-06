@@ -6,7 +6,7 @@ import { SearchSvg } from "../../ui/icons";
 
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-const HomeHeader: React.FC = () => {
+const SearchHeader: React.FC = () => {
   const insets = useSafeAreaInsets();
   return (
     <View
@@ -50,7 +50,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     borderBottomColor: "rgba(0, 0, 0, 0.1)",
     alignItems: "center",
+    backgroundColor: "#FFF"
   },
 });
 
-export default HomeHeader;
+export default SearchHeader;

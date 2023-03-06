@@ -1,11 +1,11 @@
 import React from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
-import { HomeHeader, HomeFeed } from "../components/";
+import { HomeFeed, SearchHeader } from "../components/";
 
 const HomeScreen: React.FC = () => {
   return (
     <View style={styles.container}>
-      <HomeHeader />
+      <SearchHeader />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.feedContainer}>
           <HomeFeed />
