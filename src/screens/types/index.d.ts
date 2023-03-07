@@ -1,5 +1,6 @@
 declare type RootStackParamList = {
-    Home: undefined;
+  Home: undefined;
+  Chat: undefined;
 };
 
-declare type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
+declare type Props = NativeStackScreenProps<RootStackParamList, "Home", "Chat">;

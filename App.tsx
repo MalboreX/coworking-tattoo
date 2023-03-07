@@ -13,7 +13,13 @@ import {
   Roboto_900Black,
 } from "@expo-google-fonts/roboto";
 
-import { DialoguesScreen, HomeScreen, LoginScreen, ProfileScreen } from "./src/screens";
+import {
+  ChatScreen,
+  DialoguesScreen,
+  HomeScreen,
+  LoginScreen,
+  ProfileScreen,
+} from "./src/screens";
 
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -24,8 +30,23 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
+const MessageStack = createNativeStackNavigator();
+
 const MessageScreen: React.FC = () => {
-  return <DialoguesScreen />
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Dialogues"
+        component={DialoguesScreen}
+        options={{ headerShown: false }}
+      />
+      {/*<Stack.Screen
+        name="Chat"
+        component={ChatScreen}
+        options={{ headerShown: false }}
+  />*/}
+    </Stack.Navigator>
+  );
 };
 
 const ManagerScreen: React.FC = () => {
@@ -151,6 +172,11 @@ const App: React.FC = () => {
               options={{
                 headerShown: false,
               }}
+            />
+            <Stack.Screen
+              name="Chat"
+              component={ChatScreen}
+              options={{ headerShown: false }}
             />
           </Stack.Navigator>
         </PaperProvider>
