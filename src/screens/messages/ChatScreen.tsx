@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import TextInputChat from "../../ui/inputs/TextInputChat";
 import ChatHeader from "./ChatHeader";
@@ -18,6 +18,7 @@ const messagesDefault = [
 
 const ChatScreen: React.FC = () => {
   const [messages, setMessages] = useState(messagesDefault);
+  const scrollViewRef = useRef<ScrollView>(null);
 
   const addMessage = (text: string) => {
     setMessages((prev) => {
@@ -25,49 +26,58 @@ const ChatScreen: React.FC = () => {
     });
   };
 
+  useEffect(() => {
+    scrollViewRef.current?.scrollToEnd({ animated: true });
+  }, [messages]);
+
   return (
     <View style={styles.container}>
       <ChatHeader />
-      <ScrollView>
-        <View
-          style={{
-            marginTop: 10,
-            marginHorizontal: 20,
-            flex: 1,
-            gap: 10,
-          }}
-        >
-          {messages.map((msg, idx) => {
-            return (
-              <ChatMessage
-                key={idx}
-                isMine={msg.sender == 2}
-                message={msg.message}
-              />
-            );
-          })}
-        </View>
-      </ScrollView>
-
       <View
         style={{
-          position: "absolute",
-          backgroundColor: "white",
-          bottom: 0,
-          left: 0,
-          right: 0,
+          flexDirection: "column",
+          gap: 10,
+          justifyContent: "flex-end",
+          flex: 1,
         }}
       >
         <View
           style={{
-            padding: 15,
-            paddingTop: 0,
+            flex: 1,
           }}
         >
-          <TextInputChat
-            placeholder="Message"
-            onSend={(text: string) => addMessage(text)}
-          />
+          <ScrollView ref={scrollViewRef}>
+            <View
+              style={{
+                marginTop: 10,
+                marginHorizontal: 20,
+                gap: 10,
+              }}
+            >
+              {messages.map((msg, idx) => {
+                return (
+                  <ChatMessage
+                    key={idx}
+                    isMine={msg.sender == 2}
+                    message={msg.message}
+                  />
+                );
+              })}
+            </View>
+          </ScrollView>
+        </View>
+        <View>
+          <View
+            style={{
+              padding: 15,
+              paddingTop: 0,
+            }}
+          >
+            <TextInputChat
+              placeholder="Message"
+              onSend={(text: string) => addMessage(text)}
+            />
+          </View>
         </View>
       </View>
     </View>
